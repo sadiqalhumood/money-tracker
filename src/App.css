@@ -7,6 +7,8 @@ body {
   color: #ddd;
 }
 
+
+
 main {
   max-width: 360px;
   margin: 30px auto;
@@ -48,6 +50,16 @@ form button {
   border-radius: 5px;
   padding: 5px;
   background-color: #ddd;
+}
+
+form button:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+form button:active {
+  background-color: #bbb;
+
 }
 
 div.transactions {
