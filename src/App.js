@@ -9,12 +9,21 @@ function App() {
   function addNewTransaction(ev) {
     ev.preventDefault();
     const url = process.env.REACT_APP_API_URL + '/transactions';
+    const price = name.split(' ')[0];
     fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, desc, datetime })
+      body: JSON.stringify({
+        price,
+        name: name.substring(price.length + 1),
+        desc,
+        datetime
+      })
     }).then(res => {
       res.json().then(json => {
+        setName('');
+        setDatetime('');
+        setDesc('');
         console.log('result', json);
       });
     });
